@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #banner span {
+            flex: 1;
+        }
+        #banner button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+    </style>
+    <title>Banner</title>
+</head>
+<body>
+    <div id="banner">
+        <span>Welcome to our SharePoint Site!</span>
+        <button onclick="document.getElementById('banner').style.display='none'; document.body.style.marginTop='0';">X</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var banner = document.getElementById('banner');
+            document.body.style.marginTop = banner.clientHeight + "px";
+        });
+    </script>
+</body>
+</html>
